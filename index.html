@@ -16,7 +16,7 @@
         <div id="trump" ></div>
         <div id="kardashian" ></div>
          <div id="answer" ></div>
-        
+        <div id="stock-value1"> </div>
         <div>
             <canvas id="myChart" width: "100px" height:"100px"></canvas>
         </div>
@@ -35,7 +35,7 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 <script>
 
-
+    var stockNextVal = parseFloat(document.getElementById("stock-value1").innerHTML);
     var ctx = document.getElementById('myChart').getContext('2d');
     var chart = new Chart(ctx, {
         // The type of chart we want to create
@@ -43,16 +43,19 @@
     
         // The data for our dataset
         data: {
-            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+            labels: ['January', 'February', 'March', 'April', 'May', 'June'],
             datasets: [{
-                label: 'My First dataset',
-                backgroundColor: 'rgb(255, 99, 132)',
-                borderColor: 'rgb(255, 99, 132)',
-                data: [0, 10, 5, 2, 20, 30, 45]
+                label: 'Stock Market Predictor',
+                //backgroundColor: 'rgb(255, 99, 132)',
+                borderColor: '#03fce3',
+                data: [1, 2, 1, 2, 1, stockNextVal],
+                lineTension: 0
             }]
         },
     
         // Configuration options go here
-        options: {}
+        options: {
+            bezierCurve: false
+        }
     });
 </script>
