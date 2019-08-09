@@ -1,6 +1,12 @@
 
 let trainedNet;
 let inputData = "Gonna release a new line of makeup, I really think red goes with my eyes, what do you guys think?";
+var closeData = [];
+//var trainingData = [];
+var testData = [];
+var net = new brain.recurrent.LSTMTimeStep();
+var req = new XMLHttpRequest();
+
 
 function encode(arg) {
    return arg.split('').map(x => (x.charCodeAt(0) / 255));
@@ -16,10 +22,15 @@ function processTrainingData(data) {
 }
 
 function train(data) {
-   let net = new brain.NeuralNetwork();
-   net.train(processTrainingData(data));
+   const net = new brain.recurrent.LSTMTimeStep();
+   net.train(data);
+   // let net = new brain.NeuralNetwork();
+   // net.train(processTrainingData(data));
    trainedNet = net.toFunction();
-   console.log('Finished training...');
+   // console.log('Finished training...');
+   const output = net.run([1, 2, 1, 2, 1]);
+   console.log(output);
+   document.getElementById("stock-value1").innerHTML = output;
 };
 
 function execute(input) {
@@ -33,11 +44,15 @@ function execute(input) {
    document.getElementById("trump").innerHTML = "\nTRUMP: " + results.trump.toFixed(6);
    document.getElementById("kardashian").innerHTML = "KARDASHIAN: " + results.kardashian.toFixed(6);
    document.getElementById("answer").innerHTML = "Said By: " + output;
+   
    return output;
 }
 
+
+
+
 train(trainingData);
 train(trainingData);
-console.log(execute(inputData));
+//console.log(execute(inputData));
 
 
