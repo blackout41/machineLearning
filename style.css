@@ -1,0 +1,10 @@
+
+body {
+    font: normal 16px Consolas,monaco,monospace;
+    background-color: black;
+    color: #15ff00;
+}
+
+h1, h2, h3 {
+    font-size: 32px;
+}
