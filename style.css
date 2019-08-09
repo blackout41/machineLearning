@@ -1,9 +1,11 @@
 
 body {
     font: normal 16px Consolas,monaco,monospace;
-    background-color: black;
-    color: #15ff00;
+    background-color: #303233;
+    color: #72e66a;
 }
+
+
 
 h1, h2, h3 {
     font-size: 32px;

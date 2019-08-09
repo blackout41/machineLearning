@@ -22,13 +22,17 @@ function processTrainingData(data) {
 }
 
 function train(data) {
-   const net = new brain.recurrent.LSTMTimeStep();
+   const net = new brain.recurrent.LSTMTimeStep({
+        inputSize: 1,
+        hiddenSizes: [20, 20],
+        outputSize: 1
+      });
    net.train(data);
    // let net = new brain.NeuralNetwork();
    // net.train(processTrainingData(data));
    trainedNet = net.toFunction();
    // console.log('Finished training...');
-   const output = net.run([1, 2, 1, 2, 1]);
+   const output = net.run([2 ,4, 8, 16, 32]);
    console.log(output);
    document.getElementById("stock-value1").innerHTML = output;
 };
@@ -52,7 +56,7 @@ function execute(input) {
 
 
 train(trainingData);
-train(trainingData);
+//train(trainingData);
 //console.log(execute(inputData));
 
 
