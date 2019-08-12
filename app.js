@@ -1,4 +1,4 @@
-
+const brain = require('brain.js');
 let trainedNet;
 let inputData = "Gonna release a new line of makeup, I really think red goes with my eyes, what do you guys think?";
 var closeData = [];
