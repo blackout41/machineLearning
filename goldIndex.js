@@ -9,19 +9,25 @@ const net = new brain.recurrent.LSTMTimeStep({
 //Same test as previous, but combined on a single set
 const trainingData = [
     [
-        15,
-        15,
-        16,
-        14,
-        13,
-        12,
+        8.85,
+        8.85,
+        8.89,
+        8.99,
+        8.50,
+        8.96,
+        8.85,
+        8.85,
+        8.85,
+        8.85,
+        8.50,
+        8.96,
     ]
 ];
 
 net.train(trainingData, );
 
-let result = net.run([12]);
-let forecastData = net.forecast([12], 10)
+let result = net.run([8.85]);
+let forecastData = net.forecast([8.85], 10)
 console.log(result);
 
 console.log(forecastData);
