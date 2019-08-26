@@ -57,6 +57,6 @@ function execute(input) {
 
 train(trainingData);
 //train(trainingData);
-//console.log(execute(inputData));
+console.log(execute(inputData));
 
 
