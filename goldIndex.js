@@ -17,7 +17,6 @@ const trainingData = [
         1.527,
         1.545,
         1.526,
-        1.496,
         1.507,
         1.502,
         1.497,
@@ -25,7 +24,6 @@ const trainingData = [
         1.527,
         1.545,
         1.526,
-        1.496,
         1.507,
         1.502,
         1.497,
@@ -33,34 +31,20 @@ const trainingData = [
         1.527,
         1.545,
         1.526,
-        1.496,
-        1.507,
-        1.502,
-        1.497,
-        1.527,
-        1.527,
-        1.545,
-        1.526,
-        1.496,
-        1.507,
-        1.502,
-        1.497,
-        1.527,
-        1.527,
-        1.545,
-        1.526,
-
     ]
 ];
 
 net.train(trainingData, );
 
 let result = net.run([1.496]);
-let forecastData = net.forecast([1.545], 10)
+let forecastData = net.forecast([1.526], 20)
+
 console.log(result);
 
 console.log(forecastData);
-let labelData = ["price1", "price2", "price3", "price4", "price5","price16", "price7", "price8", "price9","price10"];
+let labelData = ["price1", "price2", "price3", "price4", "price5","price6", "price7", "price8", "price9","price10", 
+"price11", "price12", "price13", "price14", "price15","price16", "price17", "price18", "price19","price20"
+];
 
 var stockNextVal = parseFloat(document.getElementById("stock-value1").innerHTML);
 var ctx = document.getElementById('myChart').getContext('2d');
