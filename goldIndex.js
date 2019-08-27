@@ -9,7 +9,7 @@ const net = new brain.recurrent.LSTMTimeStep({
 //Same test as previous, but combined on a single set
 const trainingData = [
     [
-        1.496,
+       
         1.507,
         1.502,
         1.497,
@@ -36,10 +36,10 @@ const trainingData = [
 
 net.train(trainingData, );
 
-let result = net.run([1.496]);
+//let result = net.run([1.496]);
 let forecastData = net.forecast([1.526], 20)
 
-console.log(result);
+//console.log(result);
 
 console.log(forecastData);
 let labelData = ["price1", "price2", "price3", "price4", "price5","price6", "price7", "price8", "price9","price10", 
