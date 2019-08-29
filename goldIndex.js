@@ -37,7 +37,10 @@ const trainingData = [
 
 net.train(trainingData, );
 
-//let result = net.run([1.496]);
+function trainAndLoadData(){
+    
+    
+    //let result = net.run([1.496]);
 let forecastData = net.forecast([1.526], 20)
 
 //console.log(result);
@@ -73,3 +76,14 @@ var chart = new Chart(ctx, {
         bezierCurve: false
     }
 });
+    
+    
+    
+    
+    
+    
+    setTimeout(trainAndLoadData, 5000);
+}
+
+ trainAndLoadData();
+

@@ -1,6 +1,10 @@
 /*global swal*/
 //const brain = require('brain.js');
 
+
+
+function trainAndLoadData(){
+    
 const net = new brain.recurrent.LSTMTimeStep({
     inputSize: 1,
     hiddenLayers: [10],
@@ -35,9 +39,9 @@ const trainingData = [
     ]
 ];
 
-net.train(trainingData, );
-
-//let result = net.run([1.496]);
+    
+    //let result = net.run([1.496]);
+    net.train(trainingData, );
 let forecastData = net.forecast([1.526], 20)
 
 //console.log(result);
@@ -73,3 +77,14 @@ var chart = new Chart(ctx, {
         bezierCurve: false
     }
 });
+    
+    
+    
+    
+    
+    
+    setTimeout(trainAndLoadData, 1000);
+}
+
+ trainAndLoadData();
+
