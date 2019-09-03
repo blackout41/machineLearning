@@ -1,8 +1,6 @@
 /*global swal*/
 //const brain = require('brain.js');
 
-
-
 function trainAndLoadData(){
     
 const net = new brain.recurrent.LSTMTimeStep({
@@ -52,10 +50,16 @@ let labelData = ["price1", "price2", "price3", "price4", "price5","price6", "pri
 ];
 
 
-
-
-var stockNextVal = parseFloat(document.getElementById("stock-value1").innerHTML);
+ $('#myChart').remove(); // this is my <canvas> element
+ $('#rateGraph').append('<canvas id="myChart" width="300" height="100"></canvas>');
+ let canvasStorage = document.querySelector('#myChart');
+ var ctx = canvasStorage.getContext('2d');
+ ctx.canvas.width = 300; // resize to parent width
+ ctx.canvas.height = 100; // resize to parent height
+              
 var ctx = document.getElementById('myChart').getContext('2d');
+var stockNextVal = parseFloat(document.getElementById("stock-value1").innerHTML);
+ctx = document.getElementById('myChart').getContext('2d');
 var chart = new Chart(ctx, {
     // The type of chart we want to create
     type: 'line',
@@ -79,11 +83,7 @@ var chart = new Chart(ctx, {
 });
     
     
-    
-    
-    
-    
-    setTimeout(trainAndLoadData, 1000);
+    setTimeout(trainAndLoadData,3000);
 }
 
  trainAndLoadData();
